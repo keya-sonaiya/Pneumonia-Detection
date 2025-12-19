@@ -1,0 +1,47 @@
+# ------------------------
+# Python / FastAPI
+# ------------------------
+__pycache__/
+*.pyc
+venv/
+
+# ------------------------
+# Trained model files
+# ------------------------
+backend/model/*.h5
+backend/model/*.keras
+
+# ------------------------
+# Dataset
+# ------------------------
+data/
+
+# ------------------------
+# Backend generated outputs
+# ------------------------
+backend/static/results/
+backend/static/outputs/
+
+# ------------------------
+# Jupyter / notebooks
+# ------------------------
+notebook/
+.ipynb_checkpoints/
+
+# ------------------------
+# Next.js / Frontend
+# ------------------------
+frontend/node_modules/
+frontend/.next/
+
+# ------------------------
+# Environment files
+# ------------------------
+.env
+
+# ------------------------
+# OS / Editor
+# ------------------------
+.DS_Store
+Thumbs.db
+.vscode/
