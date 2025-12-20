@@ -8,8 +8,8 @@ venv/
 # ------------------------
 # Trained model files
 # ------------------------
-backend/model/*.h5
-backend/model/*.keras
+# backend/model/*.h5
+# backend/model/*.keras
 
 # ------------------------
 # Dataset
