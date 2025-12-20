@@ -37,7 +37,8 @@ frontend/.next/
 # ------------------------
 # Environment files
 # ------------------------
-.env
+frontend/.env.local
+backend/.env
 
 # ------------------------
 # OS / Editor
