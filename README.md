@@ -6,6 +6,14 @@ The system integrates **Explainable AI (XAI)** using **occlusion sensitivity map
 This project follows an **end-to-end ML deployment pipeline**, featuring a **FastAPI backend** for inference and a **Next.js frontend** for interactive visualization, ensuring both performance and transparency.
 
 
+### Dataset
+This project uses the **Chest X-Ray Images (Pneumonia)** dataset.
+
+- Source: Kaggle  
+- Link: https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia
+- Classes: NORMAL, PNEUMONIA
+
+
 ## 🚀 Features
 
 - 🧠 DenseNet121-based CNN for pneumonia classification from chest X-ray images  
