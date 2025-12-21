@@ -117,7 +117,7 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 
 Start the frontend development server:
-````bash
+```bash
 npm run dev
 ```
 
