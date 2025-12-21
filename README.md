@@ -6,7 +6,7 @@ The system integrates **Explainable AI (XAI)** using **occlusion sensitivity map
 This project follows an **end-to-end ML deployment pipeline**, featuring a **FastAPI backend** for inference and a **Next.js frontend** for interactive visualization, ensuring both performance and transparency.
 
 
-### Dataset
+## Dataset
 
 This project uses the **Chest X-Ray Images (Pneumonia)** dataset.
 
