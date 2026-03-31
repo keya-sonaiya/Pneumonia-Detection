@@ -30,6 +30,45 @@ This project follows an end-to-end ML deployment pipeline, featuring a FastAPI b
 
 ---
 
+## 🔬 Heatmap Explanation
+
+The heatmap visualization is generated using **Occlusion Sensitivity**, a model explainability technique.
+
+It highlights the regions of the X-ray image that most influenced the model’s prediction by systematically masking parts of the image and observing changes in output.
+
+### 🎯 How to interpret the heatmap:
+- 🔴 **Red / Yellow regions** → High influence on prediction  
+- 🟢 **Green regions** → Moderate influence  
+- 🔵 **Blue regions** → Low influence  
+
+The overlay visualization combines the original X-ray with the heatmap to provide better insight into the model’s focus areas.
+
+⚠️ This visualization is intended for interpretability only.
+
+---
+
+## 🏗️ System Architecture
+
+```text
+User (Web Browser)
+        |
+        v
+Next.js Frontend (UI components)
+        |
+        v  REST API (Axios/Fetch)
+FastAPI Backend (app/main.py)
+        |
+        v
+Deep Learning Model (model/best_model.h5)
+        |
+        v
+Prediction + Occlusion Sensitivity Map
+        |
+        v
+Frontend Visualization (PredictionResult.js)
+```
+---
+
 ## 🛠️ Tech Stack
 
 ### 🔹 Machine Learning
@@ -81,51 +120,12 @@ This project uses the Chest X-Ray Images (Pneumonia) dataset.
 
 ---
 
-## 🔬 Heatmap Explanation
-
-The heatmap visualization is generated using **Occlusion Sensitivity**, a model explainability technique.
-
-It highlights the regions of the X-ray image that most influenced the model’s prediction by systematically masking parts of the image and observing changes in output.
-
-### 🎯 How to interpret the heatmap:
-- 🔴 **Red / Yellow regions** → High influence on prediction  
-- 🟢 **Green regions** → Moderate influence  
-- 🔵 **Blue regions** → Low influence  
-
-The overlay visualization combines the original X-ray with the heatmap to provide better insight into the model’s focus areas.
-
-⚠️ This visualization is intended for interpretability only.
-
----
-
 ## API Endpoints
 
 - GET / : Health check
 - POST /predict/ : Accepts a chest X-ray image (multipart/form-data) and returns the classification result (NORMAL or PNEUMONIA) with confidence
 - POST /explain/ : Accepts an image, generates an occlusion sensitivity map, and returns the path to the explanatory image
 
----
-
-## 🏗️ System Architecture
-
-```text
-User (Web Browser)
-        |
-        v
-Next.js Frontend (UI components)
-        |
-        v  REST API (Axios/Fetch)
-FastAPI Backend (app/main.py)
-        |
-        v
-Deep Learning Model (model/best_model.h5)
-        |
-        v
-Prediction + Occlusion Sensitivity Map
-        |
-        v
-Frontend Visualization (PredictionResult.js)
-```
 ---
 
 ## 📂 Project Structure
