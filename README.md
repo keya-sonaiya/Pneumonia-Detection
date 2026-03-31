@@ -20,13 +20,13 @@ This project follows an end-to-end ML deployment pipeline, featuring a FastAPI b
 ## 📸 Screenshots
 
 ### 📤 Upload 
-<img src="screenshots/upload.png" width="700"/>
+<img src="ss/upload.png" width="700"/>
 
 ### 📊 Prediction Result
-<img src="screenshots/result.png" width="700"/>
+<img src="ss/result.png" width="700"/>
 
 ### 🔍 Explainability Output
-<img src="screenshots/explain.png" width="700"/>
+<img src="ss/explain.png" width="700"/>
 
 ---
 
@@ -47,58 +47,6 @@ This project follows an end-to-end ML deployment pipeline, featuring a FastAPI b
 - Next.js 14+
 - React 19
 - Tailwind CSS
-
----
-
-## 🏗️ System Architecture
-
-```text
-User (Web Browser)
-        |
-        v
-Next.js Frontend (UI components)
-        |
-        v  REST API (Axios/Fetch)
-FastAPI Backend (app/main.py)
-        |
-        v
-Deep Learning Model (model/best_model.h5)
-        |
-        v
-Prediction + Occlusion Sensitivity Map
-        |
-        v
-Frontend Visualization (PredictionResult.js)
-```
----
-
-## 📂 Project Structure
-
-```text
-Pneumonia-Detection/
-├── backend/                  # FastAPI backend
-│   ├── app/                  # Application logic
-│   │   ├── main.py           # API entry point
-│   │   ├── routers/          # API routes (predict, explain)
-│   │   ├── services/         # ML logic (model_loader, occlusion, preprocess)
-│   │   └── utils/            # Helper functions
-│   ├── model/                # Saved models (best_model.h5)
-│   ├── notebook/             # Jupyter notebooks for training
-│   ├── static/results/       # Generated occlusion maps
-│   └── requirements.txt      # Python dependencies
-├── frontend/                 # Next.js frontend
-│   ├── app/                  # App router (page.js, layout.js, etc.)
-│   ├── components/           # UI components (FileUpload, Loader, PredictionResult)
-│   ├── public/               # Static assets
-│   ├── utils/                # API communication helpers
-│   ├── package.json          # Node dependencies
-│   └── tailwind.config.js    # Tailwind configuration
-├── data/                     # Dataset split
-│   ├── train/                # Training images
-│   ├── val/                  # Validation images
-│   └── test/                 # Testing images
-└── README.md                 # Project documentation
-```
 
 ---
 
@@ -155,6 +103,58 @@ The overlay visualization combines the original X-ray with the heatmap to provid
 - GET / : Health check
 - POST /predict/ : Accepts a chest X-ray image (multipart/form-data) and returns the classification result (NORMAL or PNEUMONIA) with confidence
 - POST /explain/ : Accepts an image, generates an occlusion sensitivity map, and returns the path to the explanatory image
+
+---
+
+## 🏗️ System Architecture
+
+```text
+User (Web Browser)
+        |
+        v
+Next.js Frontend (UI components)
+        |
+        v  REST API (Axios/Fetch)
+FastAPI Backend (app/main.py)
+        |
+        v
+Deep Learning Model (model/best_model.h5)
+        |
+        v
+Prediction + Occlusion Sensitivity Map
+        |
+        v
+Frontend Visualization (PredictionResult.js)
+```
+---
+
+## 📂 Project Structure
+
+```text
+Pneumonia-Detection/
+├── backend/                  # FastAPI backend
+│   ├── app/                  # Application logic
+│   │   ├── main.py           # API entry point
+│   │   ├── routers/          # API routes (predict, explain)
+│   │   ├── services/         # ML logic (model_loader, occlusion, preprocess)
+│   │   └── utils/            # Helper functions
+│   ├── model/                # Saved models (best_model.h5)
+│   ├── notebook/             # Jupyter notebooks for training
+│   ├── static/results/       # Generated occlusion maps
+│   └── requirements.txt      # Python dependencies
+├── frontend/                 # Next.js frontend
+│   ├── app/                  # App router (page.js, layout.js, etc.)
+│   ├── components/           # UI components (FileUpload, Loader, PredictionResult)
+│   ├── public/               # Static assets
+│   ├── utils/                # API communication helpers
+│   ├── package.json          # Node dependencies
+│   └── tailwind.config.js    # Tailwind configuration
+├── data/                     # Dataset split
+│   ├── train/                # Training images
+│   ├── val/                  # Validation images
+│   └── test/                 # Testing images
+└── README.md                 # Project documentation
+```
 
 ---
 
